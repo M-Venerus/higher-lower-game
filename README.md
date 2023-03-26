@@ -1,0 +1,1 @@
+A high-or-lower guessing game. Between two celebrities, guess who has more online followers.
