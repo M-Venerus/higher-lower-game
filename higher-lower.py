@@ -1,9 +1,11 @@
 from assets import data
 from random import randint
 
+
 def greeting():
     """Generate initial game greeting."""
     print("Welcome to celebrity guessing game!\n\nYou have to guess which celebrity has more followers!")
+
 
 def selection():
     """Select and return a random dictionary from data list. Removes the dictionary from the list once selected."""
@@ -11,6 +13,7 @@ def selection():
     celeb = data[data_index]
     data.pop(data_index)
     return celeb
+
 
 def compare(celeb_1, celeb_2):
     """Compare follower count between celebrity 1 and celebrity 2, and return appropriate result."""
@@ -24,6 +27,7 @@ def compare(celeb_1, celeb_2):
     if celeb_1['follower_count'] < celeb_2['follower_count']:
         return 2
 
+
 def guess(celeb_better):
     """Prompt user for input of guess for celebrity with more followers and compare the guess. Return True or false based on if user is correct."""
     user_guess = int(input("Which celebrity has more followers? Type '1' or '2': "))
@@ -34,12 +38,14 @@ def guess(celeb_better):
     else:
         return False 
 
+
 def display_score(score, celeb_1, celeb_2):
     """Notify user of their correct answer along with information pertaining to why (celebrity follower numbers). Update score and print new score."""
     print(f"\nYou're right! {celeb_1['name']} has {celeb_1['follower_count']},000 followers, while {celeb_2['name']} has {celeb_2['follower_count']},000 followers.")
     score += 1
     print(f"Current score: {score}.")
     return 1
+
 
 def end_game(score, celeb_1, celeb_2):
     """Notify user of their incorrect answer along with information pertaining to why (celebrity follower numbers). Display final score."""
@@ -64,6 +70,7 @@ def main():
         else:
             game_running = False
     end_game(score, celeb_1, celeb_2)
+
 
 main()
 
